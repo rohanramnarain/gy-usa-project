@@ -1,4 +1,13 @@
 
-# large datasets
-/data/raw/
+locality/data/
+*.shp
+*.dbf
+*.shx
+*.cpg
+*.prj
+*.ea.iso.xml
+*.iso.xml
 *.zip
+
+!locality/outputs/
+!locality/guyanese_pipelines_auto.py

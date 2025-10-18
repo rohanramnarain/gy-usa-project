@@ -1,0 +1,263 @@
+nta,ntaname,estimate,moe
+BK0101,Greenpoint,47,66
+BK0102,Williamsburg,78,133
+BK0103,South Williamsburg,7,66
+BK0104,East Williamsburg,157,109
+BK0201,Brooklyn Heights,29,44
+BK0202,Downtown Brooklyn-DUMBO-Boerum Hill,176,201
+BK0203,Fort Greene,126,73
+BK0204,Clinton Hill,131,119
+BK0261,Brooklyn Navy Yard,0,13
+BK0301,Bedford-Stuyvesant (West),581,303
+BK0302,Bedford-Stuyvesant (East),1238,811
+BK0401,Bushwick (West),288,240
+BK0402,Bushwick (East),1043,459
+BK0471,The Evergreens Cemetery,0,13
+BK0501,Cypress Hills,2104,724
+BK0502,East New York (North),1761,746
+BK0503,East New York-New Lots,2159,760
+BK0504,Spring Creek-Starrett City,214,189
+BK0505,East New York-City Line,1934,560
+BK0571,Highland Park-Cypress Hills Cemeteries (South),0,13
+BK0601,Carroll Gardens-Cobble Hill-Gowanus-Red Hook,206,253
+BK0602,Park Slope,64,79
+BK0701,Windsor Terrace-South Slope,21,36
+BK0702,Sunset Park (West),333,267
+BK0703,Sunset Park (Central),116,119
+BK0771,Green-Wood Cemetery,0,13
+BK0801,Prospect Heights,0,35
+BK0802,Crown Heights (North),1578,617
+BK0891,Lincoln Terrace Park,0,13
+BK0901,Crown Heights (South),837,338
+BK0902,Prospect Lefferts Gardens-Wingate,830,456
+BK1001,Bay Ridge,179,131
+BK1002,Dyker Heights,38,69
+BK1061,Fort Hamilton,0,13
+BK1091,Dyker Beach Park,0,13
+BK1101,Bensonhurst,118,110
+BK1102,Bath Beach,19,53
+BK1103,Gravesend (West),152,179
+BK1201,Sunset Park (East)-Borough Park (West),31,52
+BK1202,Borough Park,169,176
+BK1203,Kensington,248,319
+BK1204,Mapleton-Midwood (West),0,52
+BK1301,Gravesend (South),12,42
+BK1302,Coney Island-Sea Gate,338,317
+BK1303,Brighton Beach,24,47
+BK1391,Calvert Vaux Park,0,13
+BK1401,Flatbush,2080,626
+BK1402,Flatbush (West)-Ditmas Park-Parkville,243,141
+BK1403,Midwood,70,75
+BK1501,Gravesend (East)-Homecrest,42,71
+BK1502,Madison,21,58
+BK1503,Sheepshead Bay-Manhattan Beach-Gerritsen Beach,29,79
+BK1601,Ocean Hill,585,308
+BK1602,Brownsville,1172,479
+BK1701,East Flatbush-Erasmus,2159,554
+BK1702,East Flatbush-Farragut,3193,770
+BK1703,East Flatbush-Rugby,2463,711
+BK1704,East Flatbush-Remsen Village,2659,797
+BK1771,Holy Cross Cemetery,0,13
+BK1801,Flatlands,2589,731
+BK1802,Marine Park-Mill Basin-Bergen Beach,125,103
+BK1803,Canarsie,3252,678
+BK1891,Marine Park-Plumb Island,0,13
+BK1892,McGuire Fields,0,13
+BK1893,Canarsie Park & Pier,0,18
+BK5591,Prospect Park,0,13
+BK5691,Barren Island-Floyd Bennett Field,0,13
+BK5692,Jamaica Bay (West),0,13
+BK5693,Shirley Chisholm State Park,0,13
+BX0101,Mott Haven-Port Morris,161,162
+BX0102,Melrose,28,63
+BX0201,Hunts Point,53,73
+BX0202,Longwood,187,122
+BX0291,North & South Brother Islands,0,13
+BX0301,Morrisania,444,387
+BX0302,Claremont Village-Claremont (East),23,37
+BX0303,Crotona Park East,33,54
+BX0391,Crotona Park,0,13
+BX0401,Concourse-Concourse Village,327,180
+BX0402,Highbridge,46,75
+BX0403,Mount Eden-Claremont (West),356,210
+BX0491,Yankee Stadium-Macombs Dam Park,0,13
+BX0492,Claremont Park,0,13
+BX0501,University Heights (South)-Morris Heights,98,132
+BX0502,Mount Hope,420,395
+BX0503,Fordham Heights,206,196
+BX0601,West Farms,18,43
+BX0602,Tremont,153,143
+BX0603,Belmont,73,85
+BX0701,University Heights (North)-Fordham,214,178
+BX0702,Bedford Park,196,146
+BX0703,Norwood,242,119
+BX0801,Kingsbridge Heights-Van Cortlandt Village,19,46
+BX0802,Kingsbridge-Marble Hill,57,74
+BX0803,Riverdale-Spuyten Duyvil,114,107
+BX0901,Soundview-Bruckner-Bronx River,2091,660
+BX0902,Soundview-Clason Point,236,236
+BX0903,Castle Hill-Unionport,513,391
+BX0904,Parkchester,339,270
+BX0991,Soundview Park,0,13
+BX1001,Westchester Square,349,187
+BX1002,Throgs Neck-Schuylerville,370,273
+BX1003,Pelham Bay-Country Club-City Island,0,40
+BX1004,Co-op City,102,92
+BX1071,Hart Island,0,13
+BX1091,Ferry Point Park-St. Raymond Cemetery,0,13
+BX1101,Pelham Parkway-Van Nest,260,235
+BX1102,Morris Park,75,94
+BX1103,Pelham Gardens,426,255
+BX1104,Allerton,259,209
+BX1161,Hutchinson Metro Center,0,13
+BX1201,Williamsbridge-Olinville,1435,512
+BX1202,Eastchester-Edenwald-Baychester,991,666
+BX1203,Wakefield-Woodlawn,2525,1010
+BX1271,Woodlawn Cemetery,0,13
+BX2691,Van Cortlandt Park,0,13
+BX2791,Bronx Park,0,13
+BX2891,Pelham Bay Park,0,18
+MN0101,Financial District-Battery Park City,125,132
+MN0102,Tribeca-Civic Center,0,38
+MN0191,The Battery-Governors Island-Ellis Island-Liberty Island,0,23
+MN0201,SoHo-Little Italy-Hudson Square,0,35
+MN0202,Greenwich Village,11,44
+MN0203,West Village,0,42
+MN0301,Chinatown-Two Bridges,5,44
+MN0302,Lower East Side,58,85
+MN0303,East Village,64,90
+MN0401,Chelsea-Hudson Yards,269,294
+MN0402,Hell's Kitchen,67,124
+MN0501,Midtown South-Flatiron-Union Square,44,75
+MN0502,Midtown-Times Square,40,78
+MN0601,Stuyvesant Town-Peter Cooper Village,0,28
+MN0602,Gramercy,37,48
+MN0603,Murray Hill-Kips Bay,43,84
+MN0604,East Midtown-Turtle Bay,253,285
+MN0661,United Nations,0,13
+MN0701,Upper West Side-Lincoln Square,29,73
+MN0702,Upper West Side (Central),84,145
+MN0703,Upper West Side-Manhattan Valley,12,40
+MN0801,Upper East Side-Lenox Hill-Roosevelt Island,138,193
+MN0802,Upper East Side-Carnegie Hill,0,54
+MN0803,Upper East Side-Yorkville,69,101
+MN0901,Morningside Heights,131,186
+MN0902,Manhattanville-West Harlem,94,137
+MN0903,Hamilton Heights-Sugar Hill,79,95
+MN1001,Harlem (South),27,51
+MN1002,Harlem (North),236,174
+MN1101,East Harlem (South),165,139
+MN1102,East Harlem (North),44,68
+MN1191,Randall's Island,11,15
+MN1201,Washington Heights (South),30,64
+MN1202,Washington Heights (North),66,132
+MN1203,Inwood,0,41
+MN1291,Highbridge Park,0,13
+MN1292,Inwood Hill Park,0,13
+MN6491,Central Park,0,13
+QN0101,Astoria (North)-Ditmars-Steinway,86,81
+QN0102,Old Astoria-Hallets Point,92,89
+QN0103,Astoria (Central),63,68
+QN0104,Astoria (East)-Woodside (North),142,144
+QN0105,Queensbridge-Ravenswood-Dutch Kills,0,47
+QN0151,Rikers Island,17,23
+QN0161,Sunnyside Yards (North),0,13
+QN0171,St. Michael's Cemetery,0,13
+QN0191,Astoria Park,0,13
+QN0201,Long Island City-Hunters Point,10,45
+QN0202,Sunnyside,175,125
+QN0203,Woodside,32,75
+QN0261,Sunnyside Yards (South),0,13
+QN0271,Calvary & Mount Zion Cemeteries,0,13
+QN0301,Jackson Heights,436,502
+QN0302,East Elmhurst,100,105
+QN0303,North Corona,43,66
+QN0401,Elmhurst,296,204
+QN0402,Corona,415,247
+QN0501,Maspeth,112,109
+QN0502,Ridgewood,24,64
+QN0503,Glendale,31,58
+QN0504,Middle Village,405,566
+QN0571,Mount Olivet & All Faiths Cemeteries,0,13
+QN0572,Middle Village Cemetery,0,13
+QN0573,St. John Cemetery,0,13
+QN0574,Highland Park-Cypress Hills Cemeteries (North),0,13
+QN0601,Rego Park,78,93
+QN0602,Forest Hills,199,121
+QN0701,College Point,17,42
+QN0702,Whitestone-Beechhurst,25,53
+QN0703,Bay Terrace-Clearview,44,70
+QN0704,Murray Hill-Broadway Flushing,29,59
+QN0705,East Flushing,337,382
+QN0706,Queensboro Hill,112,173
+QN0707,Flushing-Willets Point,9,60
+QN0761,Fort Totten,0,13
+QN0791,Kissena Park,0,13
+QN0801,Kew Gardens Hills,204,239
+QN0802,Pomonok-Electchester-Hillcrest,185,145
+QN0803,Fresh Meadows-Utopia,341,359
+QN0804,Jamaica Estates-Holliswood,1068,408
+QN0805,Jamaica Hills-Briarwood,1941,927
+QN0871,Mount Hebron & Cedar Grove Cemeteries,0,13
+QN0891,Cunningham Park,0,13
+QN0901,Kew Gardens,244,169
+QN0902,Richmond Hill,2307,654
+QN0903,South Richmond Hill,3656,807
+QN0904,Ozone Park (North),1752,548
+QN0905,Woodhaven,856,356
+QN1001,South Ozone Park,16542,1821
+QN1002,Ozone Park,802,367
+QN1003,Howard Beach-Lindenwood,261,250
+QN1091,Spring Creek Park,0,13
+QN1101,Auburndale,0,47
+QN1102,Bayside,195,185
+QN1103,Douglaston-Little Neck,9,39
+QN1104,Oakland Gardens-Hollis Hills,143,127
+QN1191,Alley Pond Park,0,13
+QN1201,Jamaica,3876,775
+QN1202,South Jamaica,5040,1214
+QN1203,Baisley Park,4089,929
+QN1204,Springfield Gardens (North)-Rochdale Village,1045,530
+QN1205,St. Albans,1942,615
+QN1206,Hollis,2523,623
+QN1301,Glen Oaks-Floral Park-New Hyde Park,207,155
+QN1302,Bellerose,504,251
+QN1303,Queens Village,6403,1272
+QN1304,Cambria Heights,636,345
+QN1305,Laurelton,796,323
+QN1306,Springfield Gardens (South)-Brookville,780,472
+QN1307,Rosedale,1169,521
+QN1371,Montefiore Cemetery,0,13
+QN1401,Far Rockaway-Bayswater,1991,635
+QN1402,Rockaway Beach-Arverne-Edgemere,1412,532
+QN1403,Breezy Point-Belle Harbor-Rockaway Park-Broad Channel,22,40
+QN1491,Rockaway Community Park,0,13
+QN8081,LaGuardia Airport,0,13
+QN8191,Flushing Meadows-Corona Park,0,13
+QN8291,Forest Park,0,13
+QN8381,John F. Kennedy International Airport,0,13
+QN8491,Jamaica Bay (East),0,13
+QN8492,Jacob Riis Park-Fort Tilden-Breezy Point Tip,0,26
+SI0101,St. George-New Brighton,5,33
+SI0102,Tompkinsville-Stapleton-Clifton-Fox Hills,19,38
+SI0103,Rosebank-Shore Acres-Park Hill,70,78
+SI0104,West New Brighton-Silver Lake-Grymes Hill,85,84
+SI0105,Westerleigh-Castleton Corners,0,44
+SI0106,Port Richmond,15,40
+SI0107,Mariner's Harbor-Arlington-Graniteville,178,154
+SI0191,Snug Harbor,0,13
+SI0201,Grasmere-Arrochar-South Beach-Dongan Hills,54,79
+SI0202,New Dorp-Midland Beach,0,37
+SI0203,Todt Hill-Emerson Hill-Lighthouse Hill-Manor Heights,37,57
+SI0204,New Springville-Willowbrook-Bulls Head-Travis,9,48
+SI0291,Freshkills Park (North),0,13
+SI0301,Oakwood-Richmondtown,0,38
+SI0302,Great Kills-Eltingville,0,53
+SI0303,Arden Heights-Rossville,49,86
+SI0304,Annadale-Huguenot-Prince's Bay-Woodrow,87,118
+SI0305,Tottenville-Charleston,0,29
+SI0391,Freshkills Park (South),0,13
+SI9561,Fort Wadsworth,0,13
+SI9591,Hoffman & Swinburne Islands,0,13
+SI9592,Miller Field,0,13
+SI9593,Great Kills Park,0,13
