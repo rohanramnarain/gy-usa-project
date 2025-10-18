@@ -12,6 +12,13 @@ import matplotlib.pyplot as plt
 from matplotlib.ticker import StrMethodFormatter
 from mpl_toolkits.axes_grid1.inset_locator import inset_axes
 
+from matplotlib.colors import LinearSegmentedColormap
+
+def tableauish_blues():
+    return LinearSegmentedColormap.from_list(
+        "tableauish_blues",
+        ["#CFE8E0", "#A6CED4", "#7EB2C5", "#6C95B0", "#5E799A"]
+    )
 # Try geopandas for the choropleth; fall back gracefully if missing
 try:
     import geopandas as gpd
@@ -262,7 +269,6 @@ if ny_file.exists():
     save_fig("05_ny_counties_bar.png")
 else:
     print("[warn] Skipping NYC counties bar: run `python guyanese_us_data_pipeline.py acs --geo county --state-fips 36` to generate.")
-
 # ---------- Figure 6: NY counties choropleth ----------
 
 def download_ny_county_shapes() -> Path | None:
@@ -312,7 +318,7 @@ def ny_choropleth():
     m = ny_shapes.merge(ny, left_on="COUNTYFP", right_on="county_fips", how="left")
 
     fig, ax = plt.subplots(figsize=(8.5,8))
-    m.plot(column="guyanese_total_ancestry", legend=True, ax=ax)
+    m.plot(column="guyanese_total_ancestry", legend=True, ax=ax, cmap=tableauish_blues().reversed())
     ax.set_axis_off()
     ax.set_title("Guyanese Ancestry — New York Counties (ACS 5-year 2023)")
     add_caption("Cartographic boundaries: U.S. Census Bureau (2023). Values: total reporting Guyanese ancestry (single + multiple).")
