@@ -38,7 +38,11 @@ plt.rcParams.update({
 # ---------- Helpers ----------
 def save_fig(name: str):
     p = FIG / name
-    plt.tight_layout()
+    # Use tight_layout if compatible; otherwise skip to avoid warnings with inset axes
+    try:
+        plt.gcf().tight_layout()
+    except Exception:
+        pass
     plt.savefig(p, dpi=220, bbox_inches="tight")
     print(f"[ok] wrote {p}")
     plt.close()
@@ -195,19 +199,30 @@ add_caption("Inset shows the dense cluster (≤50k on both axes). Parity line in
 save_fig("03b_visibility_scatter_inset.png")
 
 # 3C) Ratio plot: Visibility index vs. foreign-born size (clearer separation)
-ratio = (y / (x.replace(0, pd.NA)))
+# Build a clean DataFrame and drop rows with zero/NA denominators
+_df = pd.DataFrame({
+    'x': x,  # born in Guyana
+    'y': y,  # ancestry
+    'state': combo['state'],
+    'size': sizes
+})
+mask = _df['x'].fillna(0) > 0
+mask &= _df['y'].notna()
+df_r = _df[mask].copy()
+df_r['ratio'] = df_r['y'] / df_r['x']
+
 fig, ax = plt.subplots(figsize=(8.6,6.2))
-ax.scatter(x, ratio, s=sizes, alpha=0.85)
+ax.scatter(df_r['x'], df_r['ratio'], s=df_r['size'], alpha=0.85)
 ax.axhline(1.0, linestyle='--')
 ax.set_xscale('symlog', linthresh=500)
 ax.set_title("Visibility Index (Ancestry / Born-in-Guyana) vs. Foreign-born size")
 ax.set_xlabel("Foreign-born from Guyana (B05006)")
 ax.set_ylabel("Visibility index (ancestry ÷ born-in-Guyana)")
 ax.grid(True, alpha=0.3)
-for _, r in combo.sort_values("ancestry_tbl", ascending=False).head(8).iterrows():
-    if pd.notna(r["born_in_guyana"]) and pd.notna(r["ancestry_tbl"]):
-        ax.annotate(r["state"], (r["born_in_guyana"], r["ancestry_tbl"] / max(r["born_in_guyana"], 1)),
-                    xytext=(5,5), textcoords="offset points", fontsize=9)
+format_thousands(ax, axis='x')
+for _, r in df_r.sort_values('y', ascending=False).head(8).iterrows():
+    ax.annotate(r['state'], (r['x'], r['ratio']),
+                xytext=(5,5), textcoords='offset points', fontsize=9)
 add_caption("Above 1 ⇒ multi‑generation presence beyond immigrant counts. Point size ∝ ancestry total.")
 save_fig("03c_visibility_ratio.png")
 
