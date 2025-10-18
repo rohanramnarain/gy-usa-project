@@ -1,0 +1,32 @@
+{
+  "collection": "cps",
+  "samples": [
+    "cps2019_03s",
+    "cps2020_03s",
+    "cps2021_03s",
+    "cps2022_03s",
+    "cps2023_03s"
+  ],
+  "variables": [
+    "YEAR",
+    "STATEFIP",
+    "AGE",
+    "SEX",
+    "BPL",
+    "LABFORCE",
+    "EMPSTAT",
+    "UHRSWORKT",
+    "OCC2010",
+    "IND1990",
+    "ASECWT"
+  ],
+  "filters": {
+    "age_min": 16,
+    "country_of_birth_filter": "BPL label contains 'guyan' (e.g., 'Guyana', 'British Guiana')"
+  },
+  "weights_used": "ASECWT",
+  "data_files": {
+    "csv": "cps_00005.csv.gz",
+    "ddi": "cps_00005.xml"
+  }
+}
