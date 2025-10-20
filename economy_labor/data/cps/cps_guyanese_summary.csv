@@ -1,2 +1,0 @@
-years,sample_type,weight,lfp_rate,unemp_rate,avg_hours_employed,n_unweighted,extract_csv,ddi_xml
-2019-2020-2021-2022-2023,ASEC,ASECWT,0.6198321378875369,0.0,999.0,449,cps_00005.csv.gz,cps_00005.xml
