@@ -1,0 +1,3 @@
+Total comments: 109
+Counts by source: {'github': 6, 'hackernews': 3, 'reddit': 100}
+Overall average sentiment (Ppos-Pneg in [-1,1]): -0.0006
