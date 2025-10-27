@@ -1,23 +1,18 @@
 
 #!/usr/bin/env python3
 """
-analyze_guyanese_comments.py  (v1.1)
+analyze_guyanese_comments.py  (v1.4)
 
-Fixes in v1.1
--------------
-- Prevents long-text crashes by enforcing explicit truncation with a safe
-  max_length (defaults to 512) when running the sentiment model.
-- Removes `return_all_scores` deprecation by using `top_k=None`.
-- More robust label handling (supports 'LABEL_0/1/2' and 'negative/neutral/positive').
+Fix
+---
+- Prior versions reindexed to a *full* time grid, which could misalign weekly
+  anchors and zero‑out real buckets. We now keep the **exact** buckets produced
+  by `Grouper(freq=...)` and only add missing **columns** for known sources.
+  This preserves your real counts/sentiment values.
 
-Outputs
--------
-- analysis_out/comments_with_sentiment.csv
-- analysis_out/counts_by_time_source.csv
-- analysis_out/sentiment_timeseries_by_source.csv
-- analysis_out/overall_summary.txt
-- analysis_out/counts_timeseries.png
-- analysis_out/sentiment_timeseries.png
+Other goodies retained:
+- Long‑text‑safe sentiment (truncation, max_length=512).
+- Clean x‑axis formatting and dashed 'no data' baselines for empty sources.
 """
 
 from __future__ import annotations
@@ -25,12 +20,16 @@ from __future__ import annotations
 import argparse
 import json
 from pathlib import Path
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Sequence
 
 import pandas as pd
 import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
 
 from tqdm import tqdm
+
+
+KNOWN_SOURCES = ["github", "hackernews", "reddit"]
 
 
 def _safe_import_transformers(model_name: str):
@@ -57,14 +56,12 @@ def load_inputs(jsonl_path: str | None, csv_path: str | None) -> pd.DataFrame:
         raise SystemExit("No input files found. Provide at least --jsonl or --csv that exists.")
     df = pd.concat(frames, ignore_index=True)
 
-    # Normalize expected columns
     for col in ["source", "id", "author", "text", "url", "created_at"]:
         if col not in df.columns:
             df[col] = None
     if "extra" not in df.columns:
         df["extra"] = None
 
-    # Deduplicate
     dedupe_key = (
         df["source"].astype(str) + "|" +
         df["id"].astype(str) + "|" +
@@ -74,16 +71,21 @@ def load_inputs(jsonl_path: str | None, csv_path: str | None) -> pd.DataFrame:
     )
     df = df.loc[~dedupe_key.duplicated()].copy()
 
-    # Parse datetime
     df["created_at"] = pd.to_datetime(df["created_at"], utc=True, errors="coerce")
     df = df.dropna(subset=["created_at"]).reset_index(drop=True)
 
-    # Text cleanup
     df["text"] = (df["text"].astype(str).fillna("").str.strip())
     df = df[df["text"].str.len() > 0].reset_index(drop=True)
 
     df["source"] = df["source"].astype(str).fillna("unknown")
     return df
+
+
+def _ensure_all_sources(columns: Sequence[str]) -> List[str]:
+    cols = set(str(c) for c in columns)
+    for s in KNOWN_SOURCES:
+        cols.add(s)
+    return sorted(cols)
 
 
 def build_time_series_counts(df: pd.DataFrame, freq: str) -> pd.DataFrame:
@@ -96,7 +98,21 @@ def build_time_series_counts(df: pd.DataFrame, freq: str) -> pd.DataFrame:
         .reset_index()
     )
     pivot = grouped.pivot(index="created_at", columns="source", values="count").fillna(0).astype(int)
+    # Keep buckets exactly as produced; only ensure all columns exist
+    all_cols = _ensure_all_sources(pivot.columns)
+    pivot = pivot.reindex(columns=all_cols).fillna(0).astype(int)
+    pivot = pivot.sort_index()
     return pivot
+
+
+def _apply_time_axis_format(ax):
+    locator = mdates.AutoDateLocator()
+    formatter = mdates.ConciseDateFormatter(locator)
+    ax.xaxis.set_major_locator(locator)
+    ax.xaxis.set_major_formatter(formatter)
+    for label in ax.get_xticklabels():
+        label.set_rotation(0)
+        label.set_ha("center")
 
 
 def plot_counts(pivot_counts: pd.DataFrame, out_path: Path) -> None:
@@ -107,7 +123,8 @@ def plot_counts(pivot_counts: pd.DataFrame, out_path: Path) -> None:
     ax.set_xlabel("Time")
     ax.set_ylabel("Count")
     ax.legend()
-    fig.autofmt_xdate()
+    _apply_time_axis_format(ax)
+    ax.grid(True, alpha=0.3)
     fig.tight_layout()
     fig.savefig(out_path, dpi=150)
     plt.close(fig)
@@ -121,7 +138,6 @@ def run_sentiment(
 ) -> pd.DataFrame:
     AutoTokenizer, AutoModelForSequenceClassification, pipe = _safe_import_transformers(model_name)
 
-    # Device resolution
     device_index = -1  # CPU
     if device is not None:
         if device.lower() == "cpu":
@@ -139,7 +155,6 @@ def run_sentiment(
     tokenizer = AutoTokenizer.from_pretrained(model_name)
     model = AutoModelForSequenceClassification.from_pretrained(model_name)
 
-    # Determine a safe max length (cap at 512 to avoid RoBERTa 514-pos embedding mismatch).
     max_len = 512
     try:
         ml = int(getattr(tokenizer, "model_max_length", 512))
@@ -153,15 +168,12 @@ def run_sentiment(
         model=model,
         tokenizer=tokenizer,
         device=device_index,
-        # NOTE: we pass truncation/max_length/top_k at call-time for clarity.
     )
 
-    # Build id2label map (handles 'LABEL_0' etc.)
     id2label = {}
     try:
         cfg_map = getattr(model.config, "id2label", None)
         if isinstance(cfg_map, dict) and cfg_map:
-            # keys may be str or int
             id2label = {int(k): str(v) for k, v in cfg_map.items()}
         elif isinstance(cfg_map, list) and cfg_map:
             id2label = {i: str(v) for i, v in enumerate(cfg_map)}
@@ -190,7 +202,7 @@ def run_sentiment(
             truncation=True,
             padding=True,
             max_length=max_len,
-            top_k=None,            # return all labels/scores (replaces return_all_scores=True)
+            top_k=None,            # return all labels/scores
         )
         if isinstance(out, dict):
             out = [out]
@@ -202,7 +214,6 @@ def run_sentiment(
         probs = {normalize_label(d["label"]): float(d["score"]) for d in per_text}
         pos = probs.get("positive", 0.0)
         neg = probs.get("negative", 0.0)
-        neu = probs.get("neutral", 0.0)
         numeric = pos - neg  # [-1, 1]
         numeric_scores.append(numeric)
         label = max(probs, key=probs.get) if probs else "unknown"
@@ -222,19 +233,27 @@ def build_sentiment_timeseries(df_sent: pd.DataFrame, freq: str) -> pd.DataFrame
         ["sentiment_score"].mean()
         .reset_index()
     )
-    pivot = grouped.pivot(index="created_at", columns="source", values="sentiment_score").astype(float)
+    pivot = grouped.pivot(index="created_at", columns="source", values="sentiment_score")
+    all_cols = _ensure_all_sources(pivot.columns)
+    pivot = pivot.reindex(columns=all_cols)
+    pivot = pivot.sort_index()
     return pivot
 
 
 def plot_sentiment(pivot_sent: pd.DataFrame, out_path: Path) -> None:
     fig, ax = plt.subplots(figsize=(10, 6))
     for col in pivot_sent.columns:
-        ax.plot(pivot_sent.index, pivot_sent[col], label=str(col))
+        series = pivot_sent[col]
+        if series.notna().any():
+            ax.plot(pivot_sent.index, series, label=str(col))
+        else:
+            ax.plot(pivot_sent.index, [0.0]*len(pivot_sent.index), linestyle="--", label=f"{col} (no data)")
     ax.set_title("Average Sentiment Over Time by Source (P(pos)-P(neg))")
     ax.set_xlabel("Time")
     ax.set_ylabel("Mean Sentiment [-1, 1]")
     ax.legend()
-    fig.autofmt_xdate()
+    _apply_time_axis_format(ax)
+    ax.grid(True, alpha=0.3)
     fig.tight_layout()
     fig.savefig(out_path, dpi=150)
     plt.close(fig)
