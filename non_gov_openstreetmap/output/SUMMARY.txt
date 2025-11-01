@@ -1,3 +1,77 @@
 Harvest summary @ 2025-11-01T21:55:19.312523+00:00
 - OSM: 27 → output/osm_pois.csv
 - GDELT: 250 → output/gdelt_articles.csv
+
+
+Executive summary
+
+Physical footprint: Your OSM venues cluster in NYC (Queens: Richmond Hill & Jamaica) with a few strays (DC, OR). Many entries are missing state tags but still plot around NYC on the map.
+
+Media pulse: U.S. news mentions of “Guyanese” spiked in Sep 2025; a chunk is syndication (e.g., Yahoo).
+
+Content flavor: Headlines most often touch Queens/NYC & culture/events; some food terms pop (roti, curry), hinting at a culinary presence signal.
+
+Tone: Title-only sentiment averages near neutral month-to-month (no sustained positivity/negativity).
+
+What each artifact says (one-liners)
+
+OSM POIs by state: NY = 8 POIs; 17 POIs have no state tag (likely NYC based on coords).
+(See: osm_state_counts.csv, osm_scatter.png)
+
+OSM POIs by city: Richmond Hill (NY) = 4, Jamaica (NY) = 3, Washington (DC) = 1; many unlabeled city rows likely NYC.
+(See: osm_city_counts.csv)
+
+OSM map: Points cluster tightly in Queens, confirming a concentrated brick-and-mortar footprint.
+(See: osm_scatter.png)
+
+GDELT monthly mentions: Peak in 2025-09 (152 articles) — a clear media surge.
+(See: gdelt_monthly_counts.csv, gdelt_monthly_timeseries.png)
+
+GDELT top domains: yahoo.com (15), oilprice.com (8) lead — indicates syndication and business/energy angles.
+(See: gdelt_top_domains.csv, gdelt_top_domains.png)
+
+GDELT keyword hits (titles): “Queens” (4), “festival” (3), “soca” (2), “restaurant” (2), “Richmond Hill” (1) — culture + NYC geo anchors.
+(See: gdelt_keyword_counts.csv)
+
+GDELT sentiment (title-level): Near-neutral monthly averages; no strong directional tone trend.
+(See: gdelt_sentiment_monthly.csv, gdelt_sentiment_timeseries.png)
+
+What this means in plain English
+
+Queens is the center of gravity. Your venue and news signals both point to Richmond Hill/Jamaica as the U.S. hub of Guyanese presence.
+
+Media attention comes in bursts. A big Sep 2025 spike suggests event- or news-driven waves; plan outreach around those cycles.
+
+Coverage skews syndicated and mixed-topic. Yahoo’s presence implies amplification rather than unique reporting; oil/business outlets also contribute, alongside culture/event pieces.
+
+Overall tone is steady. Headlines aren’t consistently positive or negative; campaigns shouldn’t assume a headwind/tailwind in sentiment.
+
+Acronyms & jargon (quick guide)
+
+OSM — OpenStreetMap: crowd-sourced map/POI database.
+
+POI — Point of Interest: venues like restaurants, bakeries, shops.
+
+GDELT — Global Database of Events, Language & Tone: news monitoring dataset/API.
+
+VADER — Valence Aware Dictionary and sEntiment Reasoner: sentiment model for short texts.
+
+TF-IDF — Term Frequency–Inverse Document Frequency: text weighting for topic modeling/search.
+
+NMF — Non-negative Matrix Factorization: topic modeling method to cluster themes.
+
+DBSCAN — Density-Based Spatial Clustering: finds geographic clusters without pre-setting cluster counts.
+
+NER — Named Entity Recognition: finds place names etc. in text.
+
+Nominatim — OSM’s reverse-geocoder (coords → city/state).
+
+Practical takeaways
+
+Target metros: Start with NYC (Queens); then explore Miami/Ft. Lauderdale, NJ, DC as secondary markets (validate with more POIs/events).
+
+Calendar your outreach: Lean into months with historic spikes (e.g., Feb/Mashramani, May/Independence, Oct–Nov/Diwali) once you add events data.
+
+Tidy the POIs: Fill missing addr:state/city (reverse-geocode) to sharpen your state/city ranks and cluster naming.
+
+De-syndicate news: Collapse near-duplicate headlines to get a truer sense of original coverage, then re-check sentiment and topics.
