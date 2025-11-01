@@ -1,0 +1,8 @@
+addr:state,addr:city,count
+,,16
+NY,Richmond Hill,4
+NY,Jamaica,3
+,Richmond Hill,1
+DC,Washington,1
+NY,New York,1
+OR,Portland,1

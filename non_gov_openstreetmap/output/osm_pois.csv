@@ -1,0 +1,28 @@
+source,osm_type,osm_id,name,category_guess,cuisine,addr:housenumber,addr:street,addr:city,addr:state,addr:postcode,phone,website,lat,lon,matched,fetched_at
+OSM,node,2553550641,Guyana Palm Court,bar,,171-16,Hillside Avenue,Jamaica,NY,11432,+1-718-298-6500;+1-718-298-6875,,40.7114811,-73.7902494,name,2025-11-01T21:54:08.646473+00:00
+OSM,node,2862505491,Sybil's Bakery & Restaurant,restaurant,guyanese,132-17,Liberty Avenue,,,11419,+1-718-835-9235,,40.690996,-73.8137152,cuisine,2025-11-01T21:54:08.646525+00:00
+OSM,node,2871178279,CD Restaurant & Bar,restaurant,guyanese,217-21,Jamaica Avenue,,,11428,,,40.7180327,-73.7371769,cuisine,2025-11-01T21:54:08.646540+00:00
+OSM,node,3057275121,Permanent Mission of Guyana to the United Nations,,,801,2nd Avenue,New York,NY,10017,+1-212-573-5828,,40.7504664,-73.9719641,name,2025-11-01T21:54:08.646552+00:00
+OSM,node,9795434198,Kassim's Bakery,fast_food,guyanese,169-28,Jamaica Avenue,Jamaica,NY,11432,(718) 206-3595,,40.7070173,-73.7897209,cuisine,2025-11-01T21:54:08.646561+00:00
+OSM,node,9795434201,Medicmasters Pharmacy,pharmacy,guyanese,169-26,Jamaica Avenue,Jamaica,NY,11432,(718) 206-4121,,40.7069987,-73.789788,cuisine,2025-11-01T21:54:08.646582+00:00
+OSM,node,11264932908,Tropical Isle,bakery,guyanese,118-19,Liberty Avenue,Richmond Hill,,,,,40.6863115,-73.8243971,cuisine,2025-11-01T21:54:08.646594+00:00
+OSM,node,11264932922,Little Guyana Pharmacy & Cafe,pharmacy,,119-08,Liberty Avenue,Richmond Hill,NY,,,,40.6862546,-73.8237666,name,2025-11-01T21:54:08.646603+00:00
+OSM,node,11264956843,Kaieteur,restaurant,west_indian;guyanese,120-04,Liberty Avenue,Richmond Hill,NY,,,,40.6865311,-73.8230444,cuisine,2025-11-01T21:54:08.646611+00:00
+OSM,node,11264976611,Tropical Jade 3 Roti Express,restaurant,guyanese;trinidadian;tobagonian,118-03,Liberty Avenue,Richmond Hill,NY,,,,40.6861787,-73.8249014,cuisine,2025-11-01T21:54:08.646620+00:00
+OSM,node,11264976616,Sonny's Roti Shop,restaurant,guyanese;trinidadian,118-06,Liberty Avenue,Richmond Hill,NY,,,,40.6859407,-73.8247169,cuisine,2025-11-01T21:54:08.646628+00:00
+OSM,node,11278065146,Guyana's Choice Bakery,bakery,,,,,,,,,40.6899487,-73.8253213,name,2025-11-01T21:54:08.646637+00:00
+OSM,node,11709672727,Bake on the Run,restaurant,Guyanese,1015,Southeast Stark Street,Portland,OR,97214,+1 503-877-8602,https://www.bakeontherunpdx.com/,45.5195578,-122.6550531,cuisine,2025-11-01T21:54:08.646649+00:00
+OSM,node,11991060383,Ashley's Guyana Gold,jewelry,,,,,,,,,42.7997429,-73.9255454,name,2025-11-01T21:54:08.646667+00:00
+OSM,node,11991087000,A Taste of Guyana Roti Shop & Bakery,bakery,,,,,,,,,42.7949525,-73.9207015,name,2025-11-01T21:54:08.646676+00:00
+OSM,node,12212303816,Guyana's Brown Betty Restaurant,fast_food,,,,,,,,,40.69056,-73.8138127,name,2025-11-01T21:54:08.646685+00:00
+OSM,node,12662698301,New Chinese Garden of Guyana Restuarant,restaurant,chinese,,,,,11419,+1 718-738-1607,https://www.facebook.com/newchinesegardenofguyana/,40.6840328,-73.8324862,name,2025-11-01T21:54:08.646693+00:00
+OSM,node,12847384214,Cuartel de la Policía Municipal de Guyanabo,police,,,,,,,,,18.3752133,-66.1135234,name,2025-11-01T21:54:08.646705+00:00
+OSM,node,12883965914,Guyana Choice Bakery,bakery,,,,,,,,,40.6819541,-73.8367437,name,2025-11-01T21:54:08.646719+00:00
+OSM,way,10818157,Guyana Street,,,,,,,,,,27.0193645,-82.020178,name,2025-11-01T21:54:08.646730+00:00
+OSM,way,17948346,Guyana Lane,,,,,,,,,,45.5511808,-84.1289135,name,2025-11-01T21:54:08.646740+00:00
+OSM,way,20285173,Guyana Court,,,,,,,,,,37.632247,-77.596794,name,2025-11-01T21:54:08.646749+00:00
+OSM,way,20298328,Guyana Drive,,,,,,,,,,37.6335045,-77.5953675,name,2025-11-01T21:54:08.646757+00:00
+OSM,way,66790371,Embassy of Guyana,,,2490,Tracy Place Northwest,Washington,DC,20008,,,38.916931,-77.0557574,name,2025-11-01T21:54:08.646766+00:00
+OSM,way,126479657,Guyana Street,,,,,,,,,,27.0438123,-82.3380511,name,2025-11-01T21:54:08.646775+00:00
+OSM,way,262843324,Guyana Road,,,,,,,,,,32.6096898,-97.3668709,name,2025-11-01T21:54:08.646784+00:00
+OSM,way,491483654,Guyana Road,,,,,,,,,,32.6102987,-97.3645523,name,2025-11-01T21:54:08.646792+00:00

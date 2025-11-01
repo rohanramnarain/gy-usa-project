@@ -1,0 +1,3 @@
+Harvest summary @ 2025-11-01T21:55:19.312523+00:00
+- OSM: 27 → output/osm_pois.csv
+- GDELT: 250 → output/gdelt_articles.csv
