@@ -94,6 +94,24 @@ GY-USA-PROJECT/
 │  │  └─ zip_choropleth.html/.png
 │  └─ outputs/                    # Any locality‑level tabular outputs
 │
+└─ online_presence/
+   ├─ guyanese_comments_2025_scraper.py
+   ├─ analyze_guyanese_comments.py
+   ├─ totals_sentiment.py
+   ├─ out.csv
+   ├─ out.jsonl
+   ├─ analysis_out/
+   │  ├─ comments_with_sentiment.csv
+   │  ├─ counts_by_time_source.csv
+      ├─ counts_timeseries.png
+   │  ├─ overall_summary.txt
+   │  ├─ sentiment_avg_and_totals_by_source.csv
+      ├─ sentiment_avg_and_totals_by_source.numbers
+      ├─ sentiment_timeseries_by_source.csv
+      ├─ sentiment_timeseries.png
+   └─ totals_out/
+      ├─ overall_summary.txt
+      └─ totals_by_source.csv
 └─ education/
    ├─ edu_pipeline.py
    ├─ filter.py
