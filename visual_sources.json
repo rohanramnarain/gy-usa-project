@@ -1,0 +1,47 @@
+[
+  {
+    "pattern": "figures/*.png",
+    "source": "U.S. Census Bureau, American Community Survey (ACS), 2023",
+    "url": "https://data.census.gov/"
+  },
+  {
+    "pattern": "education/figures/*.png",
+    "source": "U.S. Census Bureau, ACS Public Use Microdata Sample (PUMS), 2023",
+    "url": "https://www.census.gov/programs-surveys/acs/microdata.html"
+  },
+  {
+    "pattern": "education/outputs/makechartsjs/out/*.png",
+    "source": "U.S. Census Bureau, ACS PUMS, 2023",
+    "url": "https://www.census.gov/programs-surveys/acs/microdata.html"
+  },
+  {
+    "pattern": "economy_healthcare/outputs/*.png",
+    "source": "U.S. Census Bureau, American Community Survey (ACS), 2023",
+    "url": "https://data.census.gov/"
+  },
+  {
+    "pattern": "economy_healthcare/outputs/graphsinjs/out/*.png",
+    "source": "U.S. Census Bureau, American Community Survey (ACS), 2023",
+    "url": "https://data.census.gov/"
+  },
+  {
+    "pattern": "locality/maps/*.png",
+    "source": "U.S. Census Bureau, ACS 2019–2023 5-year estimates; TIGER/Line 2023 boundaries",
+    "url": "https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html"
+  },
+  {
+    "pattern": "non_gov_openstreetmap/output/gdelt_*.png",
+    "source": "GDELT Project",
+    "url": "https://www.gdeltproject.org/"
+  },
+  {
+    "pattern": "non_gov_openstreetmap/output/osm_*.png",
+    "source": "OpenStreetMap contributors (ODbL) via Overpass API",
+    "url": "https://www.openstreetmap.org/"
+  },
+  {
+    "pattern": "online_presence/analysis_out/*.png",
+    "source": "Aggregated public online comments (see scripts in online_presence/); sources vary by dataset run",
+    "url": ""
+  }
+]
