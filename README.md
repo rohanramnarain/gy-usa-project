@@ -211,6 +211,20 @@ python generate_maps.py
 
 ---
 
+## Acronyms & Terms
+
+- ACS — American Community Survey (U.S. Census Bureau)
+- PUMS — Public Use Microdata Sample (microdata from ACS)
+- TIGER/Line — Topologically Integrated Geographic Encoding and Referencing (Census boundary files)
+- OpenStreetMap — Collaborative mapping project (proper name, not an acronym)
+- GDELT — Global Database of Events, Language, and Tone
+- IPEDS — Integrated Postsecondary Education Data System
+- SEVIS — Student and Exchange Visitor Information System (used here as SEVIS‑like exports)
+- NTA — Neighborhood Tabulation Area (NYC planning geography)
+- ZCTA — ZIP Code Tabulation Area (Census ZIP‑like geography)
+
+---
+
 ## Contributing
 
 1. Create a feature branch:  
@@ -228,7 +242,7 @@ Specify a license (e.g., MIT) or “All rights reserved.” If you add a `LICENS
 
 ## Maintainer
 
-**Rohan Ramnarain** <rohan@pharmachute.com>
+**Rohan Ramnarain** <rohan.ramnarain@gmail.com>
 
 ---
 
